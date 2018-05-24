@@ -33,6 +33,7 @@ public class WarTest {
 
     @Test
     public void attackerissterker() {
+        soldier1.setWeapon(new Sword());
 
 
         army1.enrollSoldier(soldier1, headquarters);
@@ -41,8 +42,35 @@ public class WarTest {
         new War().soldierbattlefield(army1, army2);
 
 
-        assertTrue(army1.getSoldiers().get(0).equals(soldier2));
-        // assertTrue(army2.getSoldiers().size() == 0);
+        assertTrue(army1.getSoldiers().get(0).equals(soldier1));
+        assertTrue(army2.getSoldiers().size() == 0);
     }
 
+    @Test
+    public void attackerisgelijk() {
+
+        army1.enrollSoldier(soldier1, headquarters);
+        army2.enrollSoldier(soldier2, headquarters);
+
+        new War().soldierbattlefield(army1, army2);
+
+
+        assertTrue(army1.getSoldiers().get(0).equals(soldier1));
+        assertTrue(army2.getSoldiers().size() == 0);
+    }
+
+    @Test
+    public void attackeriszwakker() {
+        soldier2.setWeapon(new Sword());
+
+
+        army1.enrollSoldier(soldier1, headquarters);
+        army2.enrollSoldier(soldier2, headquarters);
+
+        new War().soldierbattlefield(army1, army2);
+
+
+        assertTrue(army2.getSoldiers().get(0).equals(soldier2));
+        assertTrue(army1.getSoldiers().size() == 0);
+    }
 }
