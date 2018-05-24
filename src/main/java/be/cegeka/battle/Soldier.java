@@ -8,9 +8,11 @@ public class Soldier {
 
     private String name;
 
+    private Boolean highlyTrained = false;
+
     private Weapon weapon = new BareFist();
 
-    public Soldier(String name) {
+    public Soldier(String name, Boolean highlyTrained) {
         if (name == null) {
             throw new IllegalArgumentException("Name mag niet null zijn");
         }
@@ -23,12 +25,16 @@ public class Soldier {
         Validate.isTrue(isNotBlank(name));
 
         this.name = name;
+        this.highlyTrained = highlyTrained;
     }
 
     String getName() {
         return this.name;
     }
 
+    public Boolean getHighlyTrained() {
+        return highlyTrained;
+    }
 
     public Weapon getWeapon() {
         return weapon;
