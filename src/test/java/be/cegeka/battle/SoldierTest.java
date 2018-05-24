@@ -58,11 +58,12 @@ public class SoldierTest {
 
     @Test()
     public void soldierGetDamageFromWeapon() {
+        int opponentDamage = 0;
         Soldier soldier = new Soldier("Test", false);
         Sword sword = new Sword();
         soldier.setWeapon(sword);
 
-        assertEquals(soldier.getWeapon().getDamagePoints(), sword.getDamagePoints());
+        assertEquals(soldier.getWeapon().getDamagePoints(opponentDamage), sword.getDamagePoints(opponentDamage));
     }
 
     @Test()
@@ -97,5 +98,24 @@ public class SoldierTest {
 
 
         assertEquals(attacker, fight.fight(attacker, defender));
+    }
+
+    @Test()
+    public void oppponentsWeaponHasEvenDamage() {
+        int opponentDamage = 0;
+        Soldier attacker = new Soldier("Test", false);
+        Soldier defender = new Soldier("Tester", false);
+        Sword sword = new Sword();
+        MagicPotion magicPotion = new MagicPotion();
+        attacker.setWeapon(magicPotion);
+        defender.setWeapon(sword);
+
+        Fight fight = new Fight();
+        fight.setAttacker(attacker);
+        fight.setDefender(defender);
+
+        assertEquals(attacker.getWeapon().getDamagePoints(defender.getWeapon().getDamagePoints(opponentDamage)), 10);
+
+
     }
 }

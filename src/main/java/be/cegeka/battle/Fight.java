@@ -13,16 +13,19 @@ public class Fight {
 
     public Soldier fight(Soldier attacker, Soldier defender) {
         Soldier winner = null;
-
-        if (attacker.getWeapon().getDamagePoints() > defender.getWeapon().getDamagePoints()) {
+        int opponentDamage = 0;
+        if (attacker.getWeapon().getDamagePoints(opponentDamage) > defender.getWeapon()
+            .getDamagePoints(opponentDamage)) {
             winner = attacker;
         }
 
-        if (attacker.getWeapon().getDamagePoints() < defender.getWeapon().getDamagePoints()) {
+        if (attacker.getWeapon().getDamagePoints(opponentDamage) < defender.getWeapon()
+            .getDamagePoints(opponentDamage)) {
             winner = defender;
         }
 
-        if (attacker.getWeapon().getDamagePoints() == defender.getWeapon().getDamagePoints()) {
+        if (attacker.getWeapon().getDamagePoints(opponentDamage) == defender.getWeapon()
+            .getDamagePoints(opponentDamage)) {
             winner = attacker;
         }
 
