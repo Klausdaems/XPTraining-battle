@@ -7,11 +7,12 @@ public class Army {
 
     private List<Soldier> soldiers = new ArrayList<>();
 
-
     private Soldier frontMan;
 
-    public Army() {
+    private String name;
 
+    public Army(String name) {
+        this.name = name;
     }
 
     public List<Soldier> getSoldiers() {

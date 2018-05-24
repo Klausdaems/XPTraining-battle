@@ -59,12 +59,13 @@ public class SoldierTest {
 
     @Test
     public void soldiergetsid() {
+        Headquarters headquarters = new Headquarters();
+
         Soldier soldier1 = new Soldier("Test", false);
         Soldier soldier2 = new Soldier("Tester", false);
 
-        Army army = new Army();
+        Army army = new Army("test");
 
-        Headquarters headquarters = new Headquarters();
 
         army.enrollSoldier(soldier1, headquarters);
         army.enrollSoldier(soldier2, headquarters);

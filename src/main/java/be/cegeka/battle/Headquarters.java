@@ -25,4 +25,6 @@ public class Headquarters implements IHeadquarters {
     public void ReportVictory(int remainingNumberOfSoldiers) {
 
     }
+
+
 }

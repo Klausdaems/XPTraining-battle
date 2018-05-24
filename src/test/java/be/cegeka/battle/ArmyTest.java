@@ -40,7 +40,7 @@ public class ArmyTest {
 
     @Before
     public void maakArmyAan() {
-        army = new Army();
+        army = new Army("test");
     }
 
     @Before

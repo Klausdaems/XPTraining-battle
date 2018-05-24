@@ -9,3 +9,4 @@
 .classpath
 settings.json
 .vscode
+src/test/java/be/cegeka/battle/ArmyTest.java

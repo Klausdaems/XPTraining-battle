@@ -27,8 +27,8 @@ public class WarTest {
     public void maakAan() {
         soldier1 = new Soldier("test", false);
         soldier2 = new Soldier("test2", false);
-        army1 = new Army();
-        army2 = new Army();
+        army1 = new Army("test1");
+        army2 = new Army("test2");
     }
 
     @Test
