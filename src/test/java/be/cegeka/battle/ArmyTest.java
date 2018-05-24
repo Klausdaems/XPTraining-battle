@@ -16,6 +16,8 @@
  */
 package be.cegeka.battle;
 
+import static org.junit.Assert.assertTrue;
+
 import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Rule;
@@ -64,7 +66,7 @@ public class ArmyTest {
 
     @Test
     public void testDatKliedFrontmanIs() {
-        Assertions.assertThat(army.getSoldiers().get(0).equals(soldier1));
+        assertTrue(army.getSoldiers().get(0).equals(soldier1));
     }
 
     @Test
