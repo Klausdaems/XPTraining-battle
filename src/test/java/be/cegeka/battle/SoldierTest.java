@@ -1,6 +1,7 @@
 package be.cegeka.battle;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -37,6 +38,31 @@ public class SoldierTest {
         expectedException.expect(RuntimeException.class);
         expectedException.expectMessage("Name mag geen spaties hebben");
         new Soldier("   ");
+    }
+
+    @Test()
+    public void soldierHasBareFist() {
+        Soldier soldier = new Soldier("Test");
+
+        assertEquals(soldier.getWeapon().getClass(), BareFist.class);
+    }
+
+    @Test()
+    public void soldierHasOtherWeapon() {
+        Soldier soldier = new Soldier("Test");
+        Sword sword = new Sword();
+        soldier.setWeapon(sword);
+
+        assertEquals(soldier.getWeapon().getClass(), Sword.class);
+    }
+
+    @Test()
+    public void soldierGetDamageFromWeapon() {
+        Soldier soldier = new Soldier("Test");
+        Sword sword = new Sword();
+        soldier.setWeapon(sword);
+
+        assertEquals(soldier.getWeapon().getDamagePoints(), sword.getDamagePoints());
     }
 
 }

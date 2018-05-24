@@ -8,6 +8,8 @@ public class Soldier {
 
     private String name;
 
+    private Weapon weapon = new BareFist();
+
     public Soldier(String name) {
         if (name == null) {
             throw new IllegalArgumentException("Name mag niet null zijn");
@@ -26,4 +28,16 @@ public class Soldier {
     String getName() {
         return this.name;
     }
+
+
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
+
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
+    }
+
+
 }
