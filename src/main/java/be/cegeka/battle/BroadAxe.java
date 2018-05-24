@@ -1,11 +1,10 @@
 package be.cegeka.battle;
 
 
-public class BroadAxe implements Weapon {
+public class BroadAxe extends Axe {
 
     @Override
-    public int getDamagePoints() {
-        Axe axe = new Axe();
-        return 2 + axe.getDamagePoints();
+    public int getDamagePoints(int opponentDamage) {
+        return super.getDamagePoints(opponentDamage) + 2;
     };
 }
