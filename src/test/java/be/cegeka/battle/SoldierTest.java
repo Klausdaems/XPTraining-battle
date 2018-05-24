@@ -65,4 +65,37 @@ public class SoldierTest {
         assertEquals(soldier.getWeapon().getDamagePoints(), sword.getDamagePoints());
     }
 
+    @Test()
+    public void soldierFight() {
+        Soldier attacker = new Soldier("Test");
+        Soldier defender = new Soldier("Tester");
+        Sword sword = new Sword();
+        BareFist bareFist = new BareFist();
+        attacker.setWeapon(sword);
+        defender.setWeapon(bareFist);
+
+        Fight fight = new Fight();
+        fight.setAttacker(attacker);
+        fight.setDefender(defender);
+
+
+        assertEquals(attacker, fight.fight(attacker, defender));
+    }
+
+
+    @Test()
+    public void soldierFightWithSameWeapons() {
+        Soldier attacker = new Soldier("Test");
+        Soldier defender = new Soldier("Tester");
+        Sword sword = new Sword();
+        attacker.setWeapon(sword);
+        defender.setWeapon(sword);
+
+        Fight fight = new Fight();
+        fight.setAttacker(attacker);
+        fight.setDefender(defender);
+
+
+        assertEquals(attacker, fight.fight(attacker, defender));
+    }
 }

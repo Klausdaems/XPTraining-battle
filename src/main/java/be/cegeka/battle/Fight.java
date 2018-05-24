@@ -4,6 +4,13 @@ package be.cegeka.battle;
 public class Fight {
 
 
+    private Soldier attacker;
+
+    private Soldier defender;
+
+    private Soldier winner;
+
+
     public Soldier fight(Soldier attacker, Soldier defender) {
         Soldier winner = null;
 
@@ -15,7 +22,41 @@ public class Fight {
             winner = defender;
         }
 
+        if (attacker.getWeapon().getDamagePoints() == defender.getWeapon().getDamagePoints()) {
+            winner = attacker;
+        }
+
         return winner;
+    }
+
+
+    public Soldier getAttacker() {
+        return attacker;
+    }
+
+
+    public void setAttacker(Soldier attacker) {
+        this.attacker = attacker;
+    }
+
+
+    public Soldier getDefender() {
+        return defender;
+    }
+
+
+    public void setDefender(Soldier defender) {
+        this.defender = defender;
+    }
+
+
+    public Soldier getWinner() {
+        return winner;
+    }
+
+
+    public void setWinner(Soldier winner) {
+        this.winner = winner;
     }
 
 }
