@@ -7,7 +7,7 @@ public class Headquarters implements IHeadquarters {
 
     }
 
-    private int id = 0;;
+    private int id = 0;
 
     @Override
     public int ReportEnListment(String soldierName) {

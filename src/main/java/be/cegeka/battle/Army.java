@@ -41,11 +41,10 @@ public class Army {
     }
 
 
-    public void enrollSoldier(Soldier soldier) {
+    public void enrollSoldier(Soldier soldier, Headquarters h) {
         this.soldier = soldier;
         soldiers.add(soldier);
         this.frontMan = soldiers.get(0);
-        Headquarters h = new Headquarters();
         soldier.setId(h.ReportEnListment(soldier.getName()));
 
     }

@@ -98,4 +98,21 @@ public class SoldierTest {
 
         assertEquals(attacker, fight.fight(attacker, defender));
     }
+
+    @Test()
+    public void soldiergetsid() {
+        Soldier soldier1 = new Soldier("Test", false);
+        Soldier soldier2 = new Soldier("Tester", false);
+
+        Army army = new Army();
+
+        Headquarters headquarters = new Headquarters();
+
+        army.enrollSoldier(soldier1, headquarters);
+        army.enrollSoldier(soldier2, headquarters);
+
+
+        assertEquals(1, soldier1.getId());
+        assertEquals(2, soldier2.getId());
+    }
 }
