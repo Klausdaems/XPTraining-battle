@@ -14,7 +14,8 @@ public class Fight {
         if (attacker.getWeapon().getDamagePoints() < defender.getWeapon().getDamagePoints()) {
             winner = defender;
         }
-
+        Headquarters h = new Headquarters();
+        h.ReportCasualty(winner.getId());
         return winner;
     }
 
