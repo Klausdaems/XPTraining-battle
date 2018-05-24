@@ -16,18 +16,32 @@ public class Fight {
         int opponentDamage = 0;
         if (attacker.getWeapon().getDamagePoints(opponentDamage) > defender.getWeapon()
             .getDamagePoints(opponentDamage)) {
+
+        }
+        Soldier verliezer = null;
+
+        if (attacker.getWeapon().getDamagePoints(opponentDamage) >= defender.getWeapon()
+            .getDamagePoints(opponentDamage)) {
             winner = attacker;
+            verliezer = defender;
         }
 
         if (attacker.getWeapon().getDamagePoints(opponentDamage) < defender.getWeapon()
             .getDamagePoints(opponentDamage)) {
             winner = defender;
+            verliezer = attacker;
         }
+
 
         if (attacker.getWeapon().getDamagePoints(opponentDamage) == defender.getWeapon()
             .getDamagePoints(opponentDamage)) {
             winner = attacker;
         }
+
+
+        Headquarters h = new Headquarters();
+        h.ReportCasualty(verliezer.getId());
+
 
         return winner;
     }

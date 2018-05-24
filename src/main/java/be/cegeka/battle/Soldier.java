@@ -8,6 +8,8 @@ public class Soldier {
 
     private String name;
 
+    private int id;
+
     private Boolean highlyTrained = false;
 
     private Weapon weapon = new BareFist();
@@ -43,6 +45,16 @@ public class Soldier {
 
     public void setWeapon(Weapon weapon) {
         this.weapon = weapon;
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+
+    public void setId(int id) {
+        this.id = id;
     }
 
 

@@ -46,9 +46,12 @@ public class ArmyTest {
         soldier1 = new Soldier("Klied", false);
         soldier2 = new Soldier("Lindert", false);
         soldier3 = new Soldier("Stef", false);
-        army.enrollSoldier(soldier1);
-        army.enrollSoldier(soldier2);
-        army.enrollSoldier(soldier3);
+
+        Headquarters headquarters = new Headquarters();
+
+        army.enrollSoldier(soldier1, headquarters);
+        army.enrollSoldier(soldier2, headquarters);
+        army.enrollSoldier(soldier3, headquarters);
     }
 
     @Rule
