@@ -13,18 +13,21 @@ public class Fight {
 
     public Soldier fight(Soldier attacker, Soldier defender) {
         Soldier winner = null;
+        Soldier verliezer = null;
 
         if (attacker.getWeapon().getDamagePoints() >= defender.getWeapon().getDamagePoints()) {
             winner = attacker;
+            verliezer = defender;
         }
 
         if (attacker.getWeapon().getDamagePoints() < defender.getWeapon().getDamagePoints()) {
             winner = defender;
+            verliezer = attacker;
         }
 
 
         Headquarters h = new Headquarters();
-        h.ReportCasualty(winner.getId());
+        h.ReportCasualty(verliezer.getId());
 
         return winner;
     }
