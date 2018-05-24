@@ -26,28 +26,28 @@ public class SoldierTest {
         new Soldier(null, false);
     }
 
-    @Test()
+    @Test
     public void construction_ASoldierMustHaveAName_CannotBeEmpty() {
         expectedException.expect(RuntimeException.class);
         expectedException.expectMessage("Name mag niet leeg zijn");
         new Soldier("", false);
     }
 
-    @Test()
+    @Test
     public void construction_ASoldierMustHaveAName_CannotBeBlank() {
         expectedException.expect(RuntimeException.class);
         expectedException.expectMessage("Name mag geen spaties hebben");
         new Soldier("   ", false);
     }
 
-    @Test()
+    @Test
     public void soldierHasBareFist() {
         Soldier soldier = new Soldier("Test", false);
 
         assertEquals(soldier.getWeapon().getClass(), BareFist.class);
     }
 
-    @Test()
+    @Test
     public void soldierHasOtherWeapon() {
         Soldier soldier = new Soldier("Test", false);
         Sword sword = new Sword();
@@ -56,7 +56,7 @@ public class SoldierTest {
         assertEquals(soldier.getWeapon().getClass(), Sword.class);
     }
 
-    @Test()
+    @Test
     public void soldierGetDamageFromWeapon() {
         int opponentDamage = 0;
         Soldier soldier = new Soldier("Test", false);
@@ -66,7 +66,7 @@ public class SoldierTest {
         assertEquals(soldier.getWeapon().getDamagePoints(opponentDamage), sword.getDamagePoints(opponentDamage));
     }
 
-    @Test()
+    @Test
     public void soldierFight() {
         Soldier attacker = new Soldier("Test", false);
         Soldier defender = new Soldier("Tester", false);
@@ -84,7 +84,7 @@ public class SoldierTest {
     }
 
 
-    @Test()
+    @Test
     public void soldierFightWithSameWeapons() {
         Soldier attacker = new Soldier("Test", false);
         Soldier defender = new Soldier("Tester", false);
@@ -100,7 +100,7 @@ public class SoldierTest {
         assertEquals(attacker, fight.fight(attacker, defender));
     }
 
-    @Test()
+    @Test
     public void oppponentsWeaponHasEvenDamage() {
         int opponentDamage = 0;
         Soldier attacker = new Soldier("Test", false);
@@ -118,6 +118,7 @@ public class SoldierTest {
 
     }
 
+    @Test
     public void soldiergetsid() {
         Soldier soldier1 = new Soldier("Test", false);
         Soldier soldier2 = new Soldier("Tester", false);
